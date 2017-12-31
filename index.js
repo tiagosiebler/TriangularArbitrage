@@ -42,7 +42,14 @@ var ctrl          = {};
       ctrl.storage.streams[key] = stream;
       ctrl.storage.candidates = ctrl.currencyCore.getCandidatesFromStream(stream);
       
-      ctrl.UI.updateTickers(ctrl.storage.candidates);  
+      // should be dynamic, ideally...
+      ctrl.currencyCore.getDynamicCandidatesFromStream(stream);
+      
+      // update UI with latest values per currency
+      ctrl.UI.updateTickers(ctrl.storage.candidates);
+      
+      // run arbitrage math
+      ctrl.currencyCore.checkArbitrage(stream, ctrl.storage.candidates);
     };
     
     // load up all currencies and initialise websockets for each

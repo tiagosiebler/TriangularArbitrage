@@ -44,3 +44,15 @@ Time           Symbol    Bid Price      Bid Volume          Ask Price      Ask V
 1514743269480  XRPBTC    0.00014111     7948.00000000       0.00014120     1764.00000000       441805
 1514743269563  XRPETH    0.00265556     2721.00000000       0.00266000     625.00000000        179677
 ```
+
+## Debugging
+
+- In Google Chrome, open the URL: 
+```
+chrome://inspect/#devices
+```
+- Click 'Open dedicated DevTools for Node'.
+- Start node with --inspect:
+```
+node --inspect index.js
+```

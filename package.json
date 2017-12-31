@@ -1,0 +1,29 @@
+{
+  "name": "nodebinance",
+  "version": "1.0.0",
+  "description": "Monitor multiple currencies in a single exchange via websockets",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "lib": "lib"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "node --inspect index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tiagosiebler/SingleExchangeMonitor.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tiagosiebler/SingleExchangeMonitor/issues"
+  },
+  "homepage": "https://github.com/tiagosiebler/SingleExchangeMonitor#readme",
+  "dependencies": {
+    "binance": "https://github.com/tiagosiebler/binance/tarball/master",
+    "clui": "^0.3.6",
+    "node-env-file": "^0.1.8"
+  }
+}

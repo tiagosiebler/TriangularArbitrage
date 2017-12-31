@@ -1,0 +1,9 @@
+# Environment Config
+
+# store your secrets and config variables in here
+# only invited collaborators will be able to see your .env values
+# reference these in your code with process.env.SECRET
+# note: .env is a shell file so there can’t be spaces around =
+
+binance_key=binanceAPIKEY
+binance_secret=binanceAPISecret

@@ -56,9 +56,10 @@ require('./lib/DBCore')(logger, (err, db)=>{
     
   }else{
     ctrl.storage.db = db;
+    
     ctrl.options.storage.logHistory = true;
     ctrl.UI       = require('./lib/UI')(ctrl.options),
-    ctrl.events   = require('./lib/EventsCore')(ctrl, exchangeAPI),
+    ctrl.events   = require('./lib/EventsCore')(ctrl);
   
     // We're ready to start. Load up the webhook streams and start making it rain.
     require('./lib/StreamsCore')(ctrl);

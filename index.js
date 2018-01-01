@@ -28,7 +28,7 @@ if(process.env.activeExchange == 'binance'){
 var ctrl          = {};
     ctrl.options  = {
       UI: {
-        title: 'Live Binance Trades - ' + activePairs
+        title: 'Top Potential Arbitrage Triplets, via ETH'
       }
     },
     ctrl.UI               = require('./lib/UI.js')(ctrl.options),
@@ -38,26 +38,23 @@ var ctrl          = {};
     ctrl.storage          = {};
     ctrl.storage.candidates = [];
     ctrl.storage.streams  = []
-    ctrl.storage.streamTick = (stream, key)=>{
+    ctrl.storage.streamTick = async (stream, key)=>{
       ctrl.storage.streams[key] = stream;
-      ctrl.storage.candidates = ctrl.currencyCore.getCandidatesFromStream(stream);
+      // ctrl.storage.candidates = ctrl.currencyCore.getCandidatesFromStream(stream);
       
       // should be dynamic, ideally...
-      ctrl.currencyCore.getDynamicCandidatesFromStream(stream);
-      
+      ctrl.storage.candidates = ctrl.currencyCore.getDynamicCandidatesFromStream2(stream);
+            
       // update UI with latest values per currency
-      ctrl.UI.updateTickers(ctrl.storage.candidates);
+      ctrl.UI.updateArbitageOpportunities(ctrl.storage.candidates);
+
+      // ctrl.UI.updateTickers(ctrl.storage.candidates);
       
       // run arbitrage math
-      ctrl.currencyCore.checkArbitrage(stream, ctrl.storage.candidates);
+      // ctrl.currencyCore.checkArbitrage(stream, ctrl.storage.candidates);
     };
     
-    // load up all currencies and initialise websockets for each
-
     
-
-
-
 
 
 

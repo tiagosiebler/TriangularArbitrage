@@ -4,11 +4,16 @@
 - Calculate rate from triangular ab -> bc -> ca path, via live bid quote.
 - Calculate and subtract fees from rate.
 - Sort and display top opportunities in descending order.
+- [todo] store historic opportunity information.
 - [todo] act on top opportunities.
 
 ## Setup
 
+### Install Dependencies
+- [MongoDB](https://docs.mongodb.com/manual/administration/install-community/)
+- [Node.js](https://nodejs.org/) 8 or Higher
 
+### Clone & Install Repo
 ```
 git clone https://github.com/tiagosiebler/BinanceTriangularArbitrage.git
 cd BinanceTriangularArbitrage

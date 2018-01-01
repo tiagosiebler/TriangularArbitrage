@@ -3,6 +3,7 @@
 - Monitor multiple currencies in a single exchange via websockets. 
 - Calculate rate from triangular ab -> bc -> ca path, via live bid quote.
 - Calculate and subtract fees from rate.
+- Sort and display top opportunities in descending order.
 - [todo] act on top opportunities.
 
 ## Setup

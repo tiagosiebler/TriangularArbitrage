@@ -28,7 +28,7 @@ if(process.env.activeExchange == 'binance'){
 var ctrl          = {};
     ctrl.options  = {
       UI: {
-        title: 'Top Potential Arbitrage Triplets, via ETH'
+        title: 'Top Potential Arbitrage Triplets, via: ' + process.env.binanceColumns
       },
       arbitrage: {
         paths: process.env.binanceColumns.split(','),

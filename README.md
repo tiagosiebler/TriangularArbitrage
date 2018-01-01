@@ -1,7 +1,9 @@
 # Triangular Arbitrage - Binance
 
 - Monitor multiple currencies in a single exchange via websockets. 
-- Attempt to automatically detect triangular arbitrage opportunities.
+- Calculate rate from triangular ab -> bc -> ca path, via live bid quote.
+- Calculate and subtract fees from rate.
+- [todo] act on top opportunities.
 
 ## Setup
 

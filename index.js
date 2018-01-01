@@ -29,21 +29,23 @@ var ctrl          = {};
     ctrl.options  = {
       UI: {
         title: 'Top Potential Arbitrage Triplets, via ETH'
+      },
+      arbitrage: {
+        paths: process.env.binanceColumns.split(','),
+        start: process.env.binanceStartingPoint
       }
     },
     ctrl.UI               = require('./lib/UI.js')(ctrl.options),
     ctrl.events           = require('./lib/EventsCore.js')(ctrl);
     
-    ctrl.currencyCore     = require('./lib/CurrencyCore.js')(activePairs, exchangeAPI, ctrl);
+    ctrl.currencyCore     = require('./lib/CurrencyCore.js')(exchangeAPI, ctrl);
     ctrl.storage          = {};
     ctrl.storage.candidates = [];
     ctrl.storage.streams  = []
     ctrl.storage.streamTick = async (stream, key)=>{
       ctrl.storage.streams[key] = stream;
-      // ctrl.storage.candidates = ctrl.currencyCore.getCandidatesFromStream(stream);
       
-      // should be dynamic, ideally...
-      ctrl.storage.candidates = ctrl.currencyCore.getDynamicCandidatesFromStream2(stream);
+      ctrl.storage.candidates = ctrl.currencyCore.getDynamicCandidatesFromStream(stream,ctrl.options.arbitrage);
             
       // update UI with latest values per currency
       ctrl.UI.updateArbitageOpportunities(ctrl.storage.candidates);

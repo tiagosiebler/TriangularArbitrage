@@ -101,5 +101,5 @@ node --inspect index.js
 ```
 
 # Social
-Talk to us on [Slack](https://join.slack.com/t/cryptotriarbbot/shared_invite/enQtMjkxOTMwMzAyOTAzLWZmNGQ3ZWE1MGI4NDUzNjdiODcyMDRkZjM2NjgxYWFhMzYxZDAyYWI1ZDVjMDRlZjI4MGM0ZGU1ZjViNjhmYWE)
+Talk to us on [Slack](https://join.slack.com/t/cryptohut/shared_invite/enQtMzAwMjk5NjIwOTgyLTY3NTc4ZTE2MGIwZDg1OThhODc4ZGI2ODRiMzNiZTc2MGQ2ZThjNmQyNjdiODIyZjMzYjNjNjdjODY1YWNjYjc)
 

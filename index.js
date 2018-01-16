@@ -11,21 +11,25 @@ if (!process.env.binance_key || !process.env.binance_secret) {
 };
 
 logger.info('\n\n\n----- Bot Starting : -----\n\n\n');
+
+var activePairs, exchangeAPI = {};
+
 logger.info('--- Loading Exchange API');
-const api = require('binance');
-const binanceRest = new api.BinanceRest({
-    key: process.env.binance_key,
-    secret: process.env.binance_secret,
-    timeout: parseInt(process.env.restTimeout), // Optional, defaults to 15000, is the request time out in milliseconds
-    recvWindow: parseInt(process.env.restRecvWindow), // Optional, defaults to 5000, increase if you're getting timestamp errors
-    disableBeautification: process.env.restBeautify != 'true'
-});
+
 
 // make exchange module dynamic later
-var activePairs, exchangeAPI = {};
 if(process.env.activeExchange == 'binance'){
   logger.info('--- \tActive Exchange:' + process.env.activeExchange);
   activePairs = process.env.binancePairs;
+  
+  const api = require('binance');
+  exchangeAPI = new api.BinanceRest({
+      key: process.env.binance_key,
+      secret: process.env.binance_secret,
+      timeout: parseInt(process.env.restTimeout), // Optional, defaults to 15000, is the request time out in milliseconds
+      recvWindow: parseInt(process.env.restRecvWindow), // Optional, defaults to 5000, increase if you're getting timestamp errors
+      disableBeautification: process.env.restBeautify != 'true'
+  });
   exchangeAPI.WS = new api.BinanceWS();
 }
 

@@ -16,7 +16,6 @@ var activePairs, exchangeAPI = {};
 
 logger.info('--- Loading Exchange API');
 
-
 // make exchange module dynamic later
 if(process.env.activeExchange == 'binance'){
   logger.info('--- \tActive Exchange:' + process.env.activeExchange);
@@ -24,11 +23,11 @@ if(process.env.activeExchange == 'binance'){
   
   const api = require('binance');
   exchangeAPI = new api.BinanceRest({
-      key: process.env.binance_key,
-      secret: process.env.binance_secret,
-      timeout: parseInt(process.env.restTimeout), // Optional, defaults to 15000, is the request time out in milliseconds
-      recvWindow: parseInt(process.env.restRecvWindow), // Optional, defaults to 5000, increase if you're getting timestamp errors
-      disableBeautification: process.env.restBeautify != 'true'
+    key: process.env.binance_key,
+    secret: process.env.binance_secret,
+    timeout: parseInt(process.env.restTimeout), // Optional, defaults to 15000, is the request time out in milliseconds
+    recvWindow: parseInt(process.env.restRecvWindow), // Optional, defaults to 5000, increase if you're getting timestamp errors
+    disableBeautification: process.env.restBeautify != 'true'
   });
   exchangeAPI.WS = new api.BinanceWS();
 }
@@ -43,11 +42,25 @@ var botOptions = {
   },
   storage: {
     logHistory: false
+  },
+  trading: {
+    paperOnly: true,
+    // only candidates with over x% gain potential are queued for trading
+    minQueuePercentageThreshold: 3
   }
 },
 ctrl = {
   options: botOptions,
-  storage: {},
+  storage: {
+    trading: {
+      // queued triplets
+      queue: [],
+      // actively trading triplets
+      active: []
+    },
+    candidates: [],
+    streams: []
+  },
   logger: logger,
   exchange: exchangeAPI
 };

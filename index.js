@@ -83,7 +83,7 @@ require('./lib/DBCore')(logger, (err, db)=>{
   ctrl.events   = require('./lib/EventsCore')(ctrl);
 
   // We're ready to start. Load up the webhook streams and start making it rain.
-  require('./lib/StreamsCore')(ctrl);
+  require('./lib/BotCore')(ctrl);
   
   ctrl.logger.info('----- Bot Startup Finished -----');
 });

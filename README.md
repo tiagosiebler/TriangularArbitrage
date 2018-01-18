@@ -10,13 +10,13 @@
 ## Setup
 
 ### Install Dependencies
-- [MongoDB](https://docs.mongodb.com/manual/administration/install-community/)
+- [MongoDB](https://docs.mongodb.com/manual/administration/install-community/) (optional)
 - [Node.js](https://nodejs.org/) 8 or Higher
 
 ### Clone & Install Repo
 ```
-git clone https://github.com/tiagosiebler/BinanceTriangularArbitrage.git
-cd BinanceTriangularArbitrage
+git clone https://github.com/tiagosiebler/TriangularArbitrage.git
+cd TriangularArbitrage
 npm install
 ```
 
@@ -99,6 +99,12 @@ chrome://inspect/#devices
 ```
 node --inspect index.js
 ```
+
+Some components also have logging enabled, generating log files within the `log` folder. Caution is advised when sharing these logs, as they may contain sensitive info (e.g MongoDB connection URL, with credentials, if a connection failed). Expanded diagnostic switches will be added later - see issue #36.
+
+## Analytics - MongoDB
+
+Live 1-second ticks as well as calculated arbitrage routes can be logged to MongoDB if configured. See the `conf.ini` file for more information. Caution is advised as thousands of rows can be collected within a few hours, up to several million per day.
 
 # Social
 Talk to us on [Slack](https://join.slack.com/t/cryptohut/shared_invite/enQtMzAwMjk5NjIwOTgyLTY3NTc4ZTE2MGIwZDg1OThhODc4ZGI2ODRiMzNiZTc2MGQ2ZThjNmQyNjdiODIyZjMzYjNjNjdjODY1YWNjYjc)

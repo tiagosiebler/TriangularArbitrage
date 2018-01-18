@@ -4,8 +4,10 @@
 - Calculate rate from triangular ab -> bc -> ca path, via live bid quote.
 - Calculate and subtract fees from rate.
 - Sort and display top opportunities in descending order.
-- [todo] store historic opportunity information.
-- [todo] act on top opportunities.
+- Store historic opportunity information in DB, for later aggregation & analytics.
+- [in progress] devise paper-trading logic.
+
+View the [projects](https://github.com/tiagosiebler/TriangularArbitrage/projects) tab for a bigger overview of the current plan.
 
 ## Setup
 

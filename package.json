@@ -29,5 +29,9 @@
     "node-env-file": "^0.1.8",
     "sosa_mongo": "^1.0.3",
     "winston": "^3.0.0-rc1"
+  },
+  "devDependencies": {
+    "eslint": "^4.15.0",
+    "eslint-config-google": "^0.9.1"
   }
 }

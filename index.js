@@ -11,7 +11,7 @@ if (!process.env.binance_key || !process.env.binance_secret) {
 
 logger.info('\n\n\n----- Bot Starting : -----\n\n\n');
 
-var activePairs, exchangeAPI = {};
+var exchangeAPI = {};
 
 logger.info('--- Loading Exchange API');
 

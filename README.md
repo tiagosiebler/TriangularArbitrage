@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/tiagosiebler/TriangularArbitrage.svg?branch=master)](https://travis-ci.org/tiagosiebler/TriangularArbitrage)
+
 # Triangular Arbitrage - Binance
 
 - Monitor multiple currencies in a single exchange via websockets. 

@@ -25,11 +25,12 @@ module.exports = {
       "error",
       "always"
     ],
-    "new-cap": 1,
+    "new-cap": "off",
     "no-console": "off",
     "no-mixed-spaces-and-tabs": 2,
     "no-use-before-define": [2, "nofunc"],
     "no-unreachable": ["warn"],
+    "no-unused-vars": ["warn"],
     "quotes": [2, "single", "avoid-escape"],
     "block-scoped-var": 2,
     "brace-style": [2, "1tbs", { "allowSingleLine": true }],

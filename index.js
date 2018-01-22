@@ -18,7 +18,7 @@ logger.info('--- Loading Exchange API');
 // make exchange module dynamic later
 if (process.env.activeExchange == 'binance'){
   logger.info('--- \tActive Exchange:' + process.env.activeExchange);
-  activePairs = process.env.binancePairs;
+  // activePairs = process.env.binancePairs;
   
   const api = require('binance');
   exchangeAPI = new api.BinanceRest({

@@ -7,7 +7,6 @@ env(__dirname + '/conf.ini');
 
 if (!process.env.binance_key || !process.env.binance_secret) {
   throw 'Error: Specify your binance API settings in a file called ".keys". The .keys-template can be used as a template for how the .keys file should look.';
-  process.exit(1);
 }
 
 logger.info('\n\n\n----- Bot Starting : -----\n\n\n');

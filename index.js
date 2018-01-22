@@ -61,7 +61,8 @@ ctrl = {
       active: []
     },
     candidates: [],
-    streams: []
+    streams: [],
+    pairRanks: []
   },
   logger: logger,
   exchange: exchangeAPI

@@ -1,7 +1,7 @@
 {
-  "name": "nodebinance",
-  "version": "1.0.0",
-  "description": "Monitor multiple currencies in a single exchange via websockets",
+  "name": "TriangularArbitrage",
+  "version": "0.2.0",
+  "description": "Monitor multiple currencies in a single exchange via websockets to detect triangular arbitrage opportunities.",
   "main": "index.js",
   "directories": {
     "doc": "docs",
@@ -9,18 +9,20 @@
   },
   "scripts": {
     "start": "node index.js",
-    "test": "node --inspect index.js"
+    "test": "echo 'test logic not done yet'",
+    "lint": "eslint .",
+    "debug": "node --inspect index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tiagosiebler/SingleExchangeMonitor.git"
+    "url": "https://github.com/tiagosiebler/TriangularArbitrage.git"
   },
-  "author": "",
+  "author": "Tiago Siebler",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/tiagosiebler/SingleExchangeMonitor/issues"
+    "url": "https://github.com/tiagosiebler/TriangularArbitrage/issues"
   },
-  "homepage": "https://github.com/tiagosiebler/SingleExchangeMonitor#readme",
+  "homepage": "https://github.com/tiagosiebler/TriangularArbitrage#readme",
   "dependencies": {
     "binance": "https://github.com/tiagosiebler/binance/tarball/master",
     "clui": "^0.3.6",
@@ -31,7 +33,6 @@
     "winston": "^3.0.0-rc1"
   },
   "devDependencies": {
-    "eslint": "^4.15.0",
-    "eslint-config-google": "^0.9.1"
+    "eslint": "^4.15.0"
   }
 }

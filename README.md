@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/tiagosiebler/TriangularArbitrage-Private.svg?branch=master)](https://travis-ci.org/tiagosiebler/TriangularArbitrage-Private)
+[![Build Status](https://travis-ci.org/tiagosiebler/TriangularArbitrage.svg?branch=master)](https://travis-ci.org/tiagosiebler/TriangularArbitrage)
 
 # Triangular Arbitrage - Binance
 
@@ -9,7 +9,7 @@
 - Store historic opportunity information in DB, for later aggregation & analytics.
 - [in progress] devise paper-trading logic.
 
-View the [projects](https://github.com/tiagosiebler/TriangularArbitrage-Private/projects) tab for a bigger overview of the current plan.
+View the [projects](https://github.com/tiagosiebler/TriangularArbitrage/projects) tab for a bigger overview of the current plan.
 
 ## Setup
 
@@ -19,7 +19,7 @@ View the [projects](https://github.com/tiagosiebler/TriangularArbitrage-Private/
 
 ### Clone & Install Repo
 ```
-git clone https://github.com/tiagosiebler/TriangularArbitrage-Private.git
+git clone https://github.com/tiagosiebler/TriangularArbitrage.git
 cd TriangularArbitrage
 npm install
 ```

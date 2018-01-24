@@ -87,32 +87,3 @@ require('./lib/DBCore')(logger, (err, db)=>{
   
   ctrl.logger.info('----- Bot Startup Finished -----');
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-    unused stuff for later
-*/    
-
-/*
- * onUserData requires an instance of BinanceRest in order to make the necessary startUserDataStream and
- * keepAliveUserDataStream calls.  The webSocket instance is returned by promise rather than directly
- * due to needing to request a listenKey from the server first.
- */
-// exchangeAPI.WS.onUserData(binanceRest, (data) => {
-//   // console.log(data);
-// }, 60000) // Optional, how often the keep alive should be sent in milliseconds
-// .then((ws) => {
-//   // websocket instance available here
-// });

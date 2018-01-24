@@ -109,7 +109,3 @@ Some components also have logging enabled, generating log files within the `log`
 ## Analytics - MongoDB
 
 Live 1-second ticks as well as calculated arbitrage routes can be logged to MongoDB if configured. See the `conf.ini` file for more information. Caution is advised as thousands of rows can be collected within a few hours, up to several million per day.
-
-# Social
-Talk to us on [Slack](https://join.slack.com/t/cryptohut/shared_invite/enQtMzAwMjk5NjIwOTgyLTY3NTc4ZTE2MGIwZDg1OThhODc4ZGI2ODRiMzNiZTc2MGQ2ZThjNmQyNjdiODIyZjMzYjNjNjdjODY1YWNjYjc)
-

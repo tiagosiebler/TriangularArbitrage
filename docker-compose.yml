@@ -9,6 +9,8 @@ services:
       mongoHost: mongo
     links:
       - mongo
+    volumes:
+      - ./log:/usr/src/app/log
   mongo:
     container_name: mongo
     image: mongo

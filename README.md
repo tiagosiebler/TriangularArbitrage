@@ -13,11 +13,27 @@ View the [projects](https://github.com/tiagosiebler/TriangularArbitrage/projects
 
 ## Setup
 
-### Install Dependencies
+### Docker
+
+#### Install Dependencies
+
+- [Docker](https://www.docker.com/community-edition#/download) Tested on version 1.13.1
+- [Docker Compose](https://docs.docker.com/compose/install/) Tested on version 1.8.0
+
+#### Clone repo
+```
+git clone https://github.com/tiagosiebler/TriangularArbitrage.git
+cd TriangularArbitrage
+```
+
+### None docker
+
+#### Install Dependencies
 - [MongoDB](https://docs.mongodb.com/manual/administration/install-community/) (optional)
 - [Node.js](https://nodejs.org/) 8 or Higher
 
-### Clone & Install Repo
+#### Clone & Install Repo
+
 ```
 git clone https://github.com/tiagosiebler/TriangularArbitrage.git
 cd TriangularArbitrage
@@ -41,6 +57,25 @@ See `conf.ini`
 
 ## Usage
 
+### Docker
+
+#### No changes
+
+If you are running for the first time or when you have made no changes to code or config
+```
+docker-compose up
+```
+
+#### Post any change
+
+If you have made any config or code changes
+```
+docker-compose kill
+docker-compose build
+docker-compose up
+```
+
+### None docker
 ```
 npm start
 ```
@@ -91,7 +126,7 @@ BTC       USDT      ETH       0.161%    0.008%    0.153%              0.016%    
 BTC       ETH       CMT       0.159%    0.008%    0.151%              0.016%           0.143%
 ```
 
-## Debugging
+### Debugging
 
 - In Google Chrome, open the URL: 
 ```

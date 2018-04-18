@@ -1,0 +1,18 @@
+version: "2"
+services:
+  app:
+    container_name: app
+    restart: always
+    build: .
+    command: [ "bash", "-c", "sleep 5 ; npm start" ]
+    environment:
+      mongoHost: mongo
+    links:
+      - mongo
+    volumes:
+      - ./log:/usr/src/app/log
+  mongo:
+    container_name: mongo
+    image: mongo
+    volumes:
+      - ./.data:/data/db

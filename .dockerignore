@@ -1,0 +1,6 @@
+npm-debug.log
+.git*
+.keys-template
+.travis.yml
+.data
+README.md

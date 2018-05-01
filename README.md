@@ -10,8 +10,6 @@
 
 ## Setup
 
-### Without Docker
-
 #### Install Dependencies
 - [MongoDB](https://docs.mongodb.com/manual/administration/install-community/) (optional)
 - [Node.js](https://nodejs.org/) 8 or Higher

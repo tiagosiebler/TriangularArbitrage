@@ -8,6 +8,16 @@
 - Sort and display top opportunities in descending order.
 - Store historic opportunity information in DB, for later aggregation & analytics.
 
+# Contributions
+My focus is currently not on further developing this project, but I will review pull requests. If you'd like to help, pull requests are openly welcome.
+
+# Donations
+If you found this project interesting or useful, buy me a coffee using any of these:
+- SmartCash: SR8CMmWAjG3wiRrK5F72Xx7HyUSNUnE9eb
+- XRP: rDsbeomae4FXwgQTJp9Rs64Qg9vDiTCdBv destinationTag: 92824144
+- LTC: MBDsV17EfXP5BrsEgDgAKiTMXWwQeHEgPf
+- BTC: 3HF6E6gqv7FN3W8hAkJeM2bXuu4sUrRMYK
+
 ## Setup
 
 #### Install Dependencies

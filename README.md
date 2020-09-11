@@ -2,7 +2,7 @@
 
 # Triangular Arbitrage - Binance
 
-- Monitor multiple currencies in a single exchange via websockets. 
+- Monitor multiple currencies in a single exchange via websockets.
 - Calculate rate for all possible triangular ab -> bc -> ca paths, via live bid quote.
 - Calculate and subtract fees from rate.
 - Sort and display top opportunities in descending order.
@@ -11,12 +11,14 @@
 # Contributions
 My focus is currently not on further developing this project, but I will review pull requests. If you'd like to help, pull requests are openly welcome.
 
-# Donations
-If you found this project interesting or useful, buy me a coffee using any of these:
-- SmartCash: SR8CMmWAjG3wiRrK5F72Xx7HyUSNUnE9eb
-- XRP: rDsbeomae4FXwgQTJp9Rs64Qg9vDiTCdBv destinationTag: 92824144
-- LTC: MBDsV17EfXP5BrsEgDgAKiTMXWwQeHEgPf
-- BTC: 3HF6E6gqv7FN3W8hAkJeM2bXuu4sUrRMYK
+# Contributions & Thanks
+If you found this project interesting or useful, create accounts with my referral links:
+- [Bybit](https://www.bybit.com/en-US/register?affiliate_id=9410&language=en-US&group_id=0&group_type=1)
+- [Binance](https://www.binance.com/en/register?ref=20983262)
+
+Or buy me coffee using any of these:
+- BTC: `1C6GWZL1XW3jrjpPTS863XtZiXL1aTK7Jk`
+- ETH (ERC20): `0xd773d8e6a50758e1ada699bb6c4f98bb4abf82da`
 
 ## Setup
 
@@ -34,15 +36,6 @@ npm install
 
 ## Configuration
 
-### API Credentials
-
-- Rename/copy the template file to .keys:
-```
-cp .keys-template .keys
-```
-
-- Edit .keys with your Binance API credentials.
-
 ### Misc Settings
 
 See `conf.ini`
@@ -54,8 +47,8 @@ npm start
 
 The result of this is a live stream from a number of pairs:
 ```
-Top Potential Arbitrage Triplets, via: BNB,ETH,USDT      
-   
+Top Potential Arbitrage Triplets, via: BNB,ETH,USDT
+
 Step A    Step B    Step C    Rate      Fees BnB  (Rate - BnB Fee)    Fees Normal      (Rate - Fee)
 BTC       BNB       GTO       10.420%   0.521%    9.899%              1.042%           9.378%
 BTC       BNB       WAVES     2.558%    0.128%    2.430%              0.256%           2.302%
@@ -98,7 +91,7 @@ BTC       USDT      ETH       0.161%    0.008%    0.153%              0.016%    
 BTC       ETH       CMT       0.159%    0.008%    0.151%              0.016%           0.143%
 ```
 
-## Docker Setup 
+## Docker Setup
 
 #### Install Dependencies
 
@@ -123,22 +116,3 @@ docker-compose kill
 docker-compose build
 docker-compose up
 ```
-
-
-## Debugging
-
-- In Google Chrome, open the URL: 
-```
-chrome://inspect/#devices
-```
-- Click 'Open dedicated DevTools for Node'.
-- Start node with --inspect:
-```
-node --inspect index.js
-```
-
-Some components also have logging enabled, generating log files within the `log` folder. Caution is advised when sharing these logs, as they may contain sensitive info (e.g MongoDB connection URL, with credentials, if a connection failed). Expanded diagnostic switches will be added later - see issue #36.
-
-## Analytics - MongoDB
-
-Live 1-second ticks as well as calculated arbitrage routes can be logged to MongoDB if configured. See the `conf.ini` file for more information. Caution is advised as thousands of rows can be collected within a few hours, up to several million per day.

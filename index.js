@@ -2,12 +2,12 @@
 const logger = require('./lib/LoggerCore');
 
 var env = require('node-env-file');
-env(__dirname + '/.keys');
-env(__dirname + '/conf.ini');
-
-if (!process.env.binance_key || !process.env.binance_secret) {
-  throw 'Error: Specify your binance API settings in a file called ".keys". The .keys-template can be used as a template for how the .keys file should look.';
+try {
+  env(__dirname + '/.keys');
+} catch (e) {
+  console.warn('No .keys was provided, running with defaults.');
 }
+env(__dirname + '/conf.ini');
 
 logger.info('\n\n\n----- Bot Starting : -----\n\n\n');
 
@@ -19,16 +19,15 @@ logger.info('--- Loading Exchange API');
 if (process.env.activeExchange == 'binance'){
   logger.info('--- \tActive Exchange:' + process.env.activeExchange);
   // activePairs = process.env.binancePairs;
-  
+
   const api = require('binance');
+  const beautifyResponse = false;
   exchangeAPI = new api.BinanceRest({
-    key: process.env.binance_key,
-    secret: process.env.binance_secret,
     timeout: parseInt(process.env.restTimeout), // Optional, defaults to 15000, is the request time out in milliseconds
     recvWindow: parseInt(process.env.restRecvWindow), // Optional, defaults to 5000, increase if you're getting timestamp errors
-    disableBeautification: process.env.restBeautify != 'true'
+    disableBeautification: beautifyResponse
   });
-  exchangeAPI.WS = new api.BinanceWS();
+  exchangeAPI.WS = new api.BinanceWS(beautifyResponse);
 }
 
 var botOptions = {
@@ -67,23 +66,10 @@ var botOptions = {
     exchange: exchangeAPI
   };
 
-// load DBCore, then start streams once DB is up and connected
-require('./lib/DBCore')(logger, (err, db)=>{
-  if (process.env.useMongo == 'true'){
-    ctrl.storage.db = db;
-    ctrl.options.storage.logHistory = true;
-  }
-  
-  if (err){
-    ctrl.logger.error('MongoDB connection unavailable, history logging disabled: ' + err);
-    ctrl.options.storage.logHistory = false;
-  }
-  
-  ctrl.UI       = require('./lib/UI')(ctrl.options),
-  ctrl.events   = require('./lib/EventsCore')(ctrl);
+ctrl.UI       = require('./lib/UI')(ctrl.options),
+ctrl.events   = require('./lib/EventsCore')(ctrl);
 
-  // We're ready to start. Load up the webhook streams and start making it rain.
-  require('./lib/BotCore')(ctrl);
-  
-  ctrl.logger.info('----- Bot Startup Finished -----');
-});
+// We're ready to start. Load up the webhook streams and start making it rain.
+require('./lib/BotCore')(ctrl);
+
+ctrl.logger.info('----- Bot Startup Finished -----');

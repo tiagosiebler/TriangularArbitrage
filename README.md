@@ -20,10 +20,24 @@ Or buy me coffee using any of these:
 - BTC: `1C6GWZL1XW3jrjpPTS863XtZiXL1aTK7Jk`
 - ETH (ERC20): `0xd773d8e6a50758e1ada699bb6c4f98bb4abf82da`
 
+## Related projects
+
+Check out my related projects:
+
+- Try my Node.js SDKs for exchange APIs:
+  - [binance](https://www.npmjs.com/package/binance)
+  - [bybit-api](https://www.npmjs.com/package/bybit-api)
+  - [okx-api](https://www.npmjs.com/package/okx-api)
+  - [bitget-api](https://www.npmjs.com/package/bitget-api)
+  - [ftx-api](https://www.npmjs.com/package/ftx-api)
+- Try my misc utilities:
+  - [orderbooks](https://www.npmjs.com/package/orderbooks)
+- Check out my examples:
+  - [awesome-crypto-examples](https://github.com/tiagosiebler/awesome-crypto-examples)
+
 ## Setup
 
 #### Install Dependencies
-- [MongoDB](https://docs.mongodb.com/manual/administration/install-community/) (optional)
 - [Node.js](https://nodejs.org/) 8 or Higher
 
 #### Clone & Install Repo
